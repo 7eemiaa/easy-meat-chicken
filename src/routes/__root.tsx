@@ -19,16 +19,16 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground font-serif">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">الصفحة غير موجودة</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          الصفحة التي تبحث عنها غير موجودة أو تم نقلها.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            العودة إلى الرئيسية
           </Link>
         </div>
       </div>
@@ -47,10 +47,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          تعذّر تحميل هذه الصفحة
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          حدث خطأ ما. يمكنك المحاولة مرة أخرى أو العودة إلى الصفحة الرئيسية.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -60,13 +60,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            حاول مجدداً
           </button>
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-full border border-input bg-background px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
-            Go home
+            العودة إلى الرئيسية
           </a>
         </div>
       </div>
@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Djaji | Premium Meat & Chicken Delivery" },
-      { name: "description", content: "Farm-fresh premium meat and chicken delivered to your door. Easy ordering, fast delivery, unbeatable quality." },
-      { name: "author", content: "Djaji" },
-      { property: "og:title", content: "Djaji | Premium Meat & Chicken Delivery" },
-      { property: "og:description", content: "Farm-fresh premium meat and chicken delivered to your door." },
+      { title: "دجاجي | توصيل اللحوم والدجاج الطازج" },
+      { name: "description", content: "لحوم ودجاج طازج من المزرعة يُوصَّل إلى باب منزلك. طلب سهل، توصيل سريع، جودة لا تُضاهى." },
+      { name: "author", content: "دجاجي" },
+      { property: "og:title", content: "دجاجي | توصيل اللحوم والدجاج الطازج" },
+      { property: "og:description", content: "لحوم ودجاج طازج من المزرعة يُوصَّل إلى باب منزلك." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@primecut" },
+      { name: "twitter:site", content: "@djaji" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -104,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <head>
         <HeadContent />
       </head>
@@ -127,7 +127,7 @@ function RootComponent() {
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <Link to="/" className="flex items-center gap-2">
               <span className="text-2xl font-serif font-bold tracking-tight text-foreground">
-                Djaji
+                دجاجي
               </span>
             </Link>
             <nav className="flex items-center gap-4">
@@ -135,7 +135,7 @@ function RootComponent() {
                 to="/"
                 className="hidden sm:inline-flex text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                Shop
+                المتجر
               </Link>
               <CartDrawer />
             </nav>
@@ -147,9 +147,9 @@ function RootComponent() {
         <footer className="border-t border-border bg-secondary py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <span className="text-xl font-serif font-bold">Djaji</span>
+              <span className="text-xl font-serif font-bold">دجاجي</span>
               <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Djaji. Premium meat & chicken delivered.
+                © {new Date().getFullYear()} دجاجي. لحوم ودجاج فاخر يُوصَّل إليك.
               </p>
             </div>
           </div>

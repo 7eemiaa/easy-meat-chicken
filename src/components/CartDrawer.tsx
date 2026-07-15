@@ -50,7 +50,7 @@ export function CartDrawer() {
         <Button
           variant="outline"
           size="icon"
-          aria-label="Open cart"
+          aria-label="فتح السلة"
           className="relative rounded-full border-border bg-card hover:bg-secondary"
         >
           <ShoppingCart className="h-5 w-5" />
@@ -63,11 +63,11 @@ export function CartDrawer() {
       </SheetTrigger>
       <SheetContent className="w-full sm:max-w-lg flex flex-col h-full bg-background border-border">
         <SheetHeader className="flex-shrink-0">
-          <SheetTitle className="font-serif text-2xl">Your Cart</SheetTitle>
+          <SheetTitle className="font-serif text-2xl">سلتك</SheetTitle>
           <SheetDescription>
             {totalItems === 0
-              ? "Your cart is empty"
-              : `${totalItems} item${totalItems !== 1 ? "s" : ""} in your cart`}
+              ? "سلتك فارغة"
+              : `${totalItems} منتج${totalItems !== 1 ? "ات" : ""} في سلتك`}
           </SheetDescription>
         </SheetHeader>
         <div className="flex flex-col flex-1 pt-6 min-h-0">
@@ -75,9 +75,9 @@ export function CartDrawer() {
             <div className="flex-1 flex items-center justify-center">
               <div className="text-center">
                 <ShoppingCart className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground">Your cart is empty</p>
+                <p className="text-muted-foreground">سلتك فارغة</p>
                 <Button onClick={() => setIsOpen(false)} className="mt-4" asChild>
-                  <Link to="/">Browse products</Link>
+                  <Link to="/">تصفح المنتجات</Link>
                 </Button>
               </div>
             </div>
@@ -145,7 +145,7 @@ export function CartDrawer() {
               </div>
               <div className="flex-shrink-0 space-y-4 pt-4 border-t border-border bg-background">
                 <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold">Total</span>
+                  <span className="text-lg font-semibold">المجموع</span>
                   <span className="text-2xl font-bold font-serif">
                     {currencyCode} {totalPrice.toFixed(2)}
                   </span>
@@ -160,8 +160,8 @@ export function CartDrawer() {
                     <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
                     <>
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Checkout with Shopify
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                      إتمام الشراء عبر Shopify
                     </>
                   )}
                 </Button>

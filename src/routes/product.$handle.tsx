@@ -35,9 +35,9 @@ export const Route = createFileRoute("/product/$handle")({
   component: ProductPage,
   notFoundComponent: () => (
     <div className="mx-auto max-w-7xl px-4 py-24 text-center">
-      <h1 className="font-serif text-4xl">Product not found</h1>
+      <h1 className="font-serif text-4xl">المنتج غير موجود</h1>
       <Button asChild className="mt-6 rounded-full">
-        <Link to="/">Back to shop</Link>
+        <Link to="/">العودة إلى المتجر</Link>
       </Button>
     </div>
   ),
@@ -73,10 +73,10 @@ function ProductPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-      <Button variant="ghost" asChild className="mb-6 -ml-4 rounded-full">
+      <Button variant="ghost" asChild className="mb-6 -mr-4 rounded-full">
         <Link to="/">
-          <ChevronLeft className="mr-2 h-4 w-4" />
-          Back to shop
+          <ChevronLeft className="ml-2 h-4 w-4 rtl:rotate-180" />
+          العودة إلى المتجر
         </Link>
       </Button>
 
@@ -91,7 +91,7 @@ function ProductPage() {
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-              No image
+              لا توجد صورة
             </div>
           )}
         </div>
@@ -99,7 +99,7 @@ function ProductPage() {
         {/* Details */}
         <div className="flex flex-col">
           <Badge variant="secondary" className="w-fit rounded-full mb-4">
-            {selectedVariant?.availableForSale ? "In stock" : "Out of stock"}
+            {selectedVariant?.availableForSale ? "متوفر" : "غير متوفر"}
           </Badge>
           <h1 className="font-serif text-4xl sm:text-5xl text-foreground">{product.title}</h1>
           <p className="mt-4 text-3xl font-semibold">
@@ -173,8 +173,8 @@ function ProductPage() {
               onClick={handleAddToCart}
               disabled={isLoading || !selectedVariant?.availableForSale}
             >
-              <ShoppingBag className="mr-2 h-5 w-5" />
-              {isLoading ? "Adding..." : "Add to Cart"}
+              <ShoppingBag className="ml-2 h-5 w-5" />
+              {isLoading ? "جارٍ الإضافة..." : "أضف إلى السلة"}
             </Button>
           </div>
         </div>

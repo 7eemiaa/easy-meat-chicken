@@ -46,7 +46,7 @@ export function ProductCard({ product }: ProductCardProps) {
             />
           ) : (
             <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground">
-              No image
+              لا توجد صورة
             </div>
           )}
         </div>
@@ -58,7 +58,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </h3>
         </Link>
         <p className="text-sm text-muted-foreground line-clamp-2 mt-1 mb-3">
-          {node.description || "Premium quality cut"}
+          {node.description || "قطعة فاخرة الجودة"}
         </p>
         <div className="flex items-center justify-between gap-3">
           <span className="text-lg font-semibold">
@@ -70,8 +70,8 @@ export function ProductCard({ product }: ProductCardProps) {
             onClick={handleAddToCart}
             disabled={isLoading || !firstVariant?.availableForSale}
           >
-            <ShoppingBag className="h-4 w-4 mr-2" />
-            Add
+            <ShoppingBag className="h-4 w-4 ml-2" />
+            أضف
           </Button>
         </div>
       </CardContent>
