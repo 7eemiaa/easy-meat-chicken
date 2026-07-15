@@ -128,11 +128,34 @@ function Index() {
             </Button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((product) => (
-              <ProductCard key={product.node.id} product={product} />
-            ))}
-          </div>
+          (() => {
+            const cookedMeals = products.filter((p) => p.node.productType === "Cooked Meals");
+            const freshMeat = products.filter((p) => p.node.productType !== "Cooked Meals");
+            return (
+              <div className="flex flex-col gap-16">
+                {freshMeat.length > 0 && (
+                  <div>
+                    <h3 className="font-serif text-3xl text-foreground mb-6">Fresh Meat & Chicken</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {freshMeat.map((product) => (
+                        <ProductCard key={product.node.id} product={product} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {cookedMeals.length > 0 && (
+                  <div>
+                    <h3 className="font-serif text-3xl text-foreground mb-6">Cooked Meals</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {cookedMeals.map((product) => (
+                        <ProductCard key={product.node.id} product={product} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })()
         )}
       </section>
     </div>
