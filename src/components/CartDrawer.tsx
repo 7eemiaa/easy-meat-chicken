@@ -50,6 +50,7 @@ export function CartDrawer() {
         <Button
           variant="outline"
           size="icon"
+          aria-label="Open cart"
           className="relative rounded-full border-border bg-card hover:bg-secondary"
         >
           <ShoppingCart className="h-5 w-5" />
