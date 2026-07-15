@@ -49,7 +49,7 @@ function ProductPage() {
   const addItem = useCartStore((state) => state.addItem);
   const isLoading = useCartStore((state) => state.isLoading);
 
-  const [selectedVariant, setSelectedVariant] = useState(product.variants.edges[0]?.node);
+  const [selectedVariant, setSelectedVariant] = useState(product?.variants.edges[0]?.node);
   const [quantity, setQuantity] = useState(1);
 
   if (!product) return null;
