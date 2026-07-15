@@ -79,10 +79,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Prime Cut | Premium Meat & Chicken Delivery" },
+      { title: "Djajiu | Premium Meat & Chicken Delivery" },
       { name: "description", content: "Farm-fresh premium meat and chicken delivered to your door. Easy ordering, fast delivery, unbeatable quality." },
-      { name: "author", content: "Prime Cut" },
-      { property: "og:title", content: "Prime Cut | Premium Meat & Chicken Delivery" },
+      { name: "author", content: "Djajiu" },
+      { property: "og:title", content: "Djajiu | Premium Meat & Chicken Delivery" },
       { property: "og:description", content: "Farm-fresh premium meat and chicken delivered to your door." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -127,7 +127,7 @@ function RootComponent() {
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <Link to="/" className="flex items-center gap-2">
               <span className="text-2xl font-serif font-bold tracking-tight text-foreground">
-                Prime Cut
+                Djajiu
               </span>
             </Link>
             <nav className="flex items-center gap-4">
@@ -147,9 +147,9 @@ function RootComponent() {
         <footer className="border-t border-border bg-secondary py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <span className="text-xl font-serif font-bold">Prime Cut</span>
+              <span className="text-xl font-serif font-bold">Djajiu</span>
               <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Prime Cut. Premium meat & chicken delivered.
+                © {new Date().getFullYear()} Djajiu. Premium meat & chicken delivered.
               </p>
             </div>
           </div>

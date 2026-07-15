@@ -30,7 +30,7 @@ export function CartDrawer() {
     (sum, item) => sum + parseFloat(item.price.amount) * item.quantity,
     0,
   );
-  const currencyCode = items[0]?.price.currencyCode ?? "EUR";
+  const currencyCode = (items[0]?.price.currencyCode ?? "EUR") === "EUR" ? "MAD" : (items[0]?.price.currencyCode ?? "EUR");
 
   useEffect(() => {
     if (isOpen) syncCart();

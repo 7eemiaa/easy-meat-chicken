@@ -24,9 +24,9 @@ export const Route = createFileRoute("/product/$handle")({
     const imageUrl = loaderData?.images.edges[0]?.node.url;
     return {
       meta: [
-        { title: `${title} | Prime Cut` },
-        { name: "description", content: description },
-        { property: "og:title", content: `${title} | Prime Cut` },
+        { title: `${title} | Djajiu` },
+        { name: "description", description },
+        { property: "og:title", content: `${title} | Djajiu` },
         { property: "og:description", content: description },
         imageUrl ? { property: "og:image", content: imageUrl } : undefined,
       ].filter(Boolean),
@@ -69,7 +69,7 @@ function ProductPage() {
   };
 
   const formatPrice = (amount: string, currency: string) =>
-    `${currency} ${parseFloat(amount).toFixed(2)}`;
+    `${currency === 'EUR' ? 'MAD' : currency} ${parseFloat(amount).toFixed(2)}`;
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
