@@ -127,7 +127,7 @@ function RootComponent() {
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <Link to="/" className="flex items-center gap-2">
               <span className="text-2xl font-serif font-bold tracking-tight text-foreground">
-                Djajiu
+                Djaji
               </span>
             </Link>
             <nav className="flex items-center gap-4">
