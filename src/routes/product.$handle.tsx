@@ -18,17 +18,20 @@ export const Route = createFileRoute("/product/$handle")({
     if (!product) throw notFound();
     return product;
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData.title} | Prime Cut` },
-      { name: "description", content: loaderData.description.slice(0, 160) },
-      { property: "og:title", content: `${loaderData.title} | Prime Cut` },
-      { property: "og:description", content: loaderData.description.slice(0, 160) },
-      loaderData.images.edges[0]?.node.url
-        ? { property: "og:image", content: loaderData.images.edges[0].node.url }
-        : undefined,
-    ].filter(Boolean),
-  }),
+  head: ({ loaderData }) => {
+    const title = loaderData?.title ?? "Product";
+    const description = loaderData?.description?.slice(0, 160) ?? "";
+    const imageUrl = loaderData?.images.edges[0]?.node.url;
+    return {
+      meta: [
+        { title: `${title} | Prime Cut` },
+        { name: "description", content: description },
+        { property: "og:title", content: `${title} | Prime Cut` },
+        { property: "og:description", content: description },
+        imageUrl ? { property: "og:image", content: imageUrl } : undefined,
+      ].filter(Boolean),
+    };
+  },
   component: ProductPage,
   notFoundComponent: () => (
     <div className="mx-auto max-w-7xl px-4 py-24 text-center">
