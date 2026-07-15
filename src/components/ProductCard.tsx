@@ -62,7 +62,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </p>
         <div className="flex items-center justify-between gap-3">
           <span className="text-lg font-semibold">
-            {price.currencyCode} {parseFloat(price.amount).toFixed(2)}
+            {price.currencyCode === 'EUR' ? 'MAD' : price.currencyCode} {parseFloat(price.amount).toFixed(2)}
           </span>
           <Button
             size="sm"
