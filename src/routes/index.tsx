@@ -78,7 +78,7 @@ function Index() {
                 variant="outline"
                 className="rounded-full px-8 h-12 text-base"
               >
-                <Link to="/" hash="djaji">دجاجي · Volaille</Link>
+                <Link to="/djaji">دجاجي · Volaille</Link>
               </Button>
             </div>
           </div>

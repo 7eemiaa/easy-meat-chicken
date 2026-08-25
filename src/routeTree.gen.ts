@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as DjajiRouteImport } from './routes/djaji'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DjajiRoute = DjajiRouteImport.update({
+  id: '/djaji',
+  path: '/djaji',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,30 +37,34 @@ const ProductHandleRoute = ProductHandleRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/djaji': typeof DjajiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/djaji': typeof DjajiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/djaji': typeof DjajiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml' | '/product/$handle'
+  fullPaths: '/' | '/djaji' | '/sitemap.xml' | '/product/$handle'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml' | '/product/$handle'
-  id: '__root__' | '/' | '/sitemap.xml' | '/product/$handle'
+  to: '/' | '/djaji' | '/sitemap.xml' | '/product/$handle'
+  id: '__root__' | '/' | '/djaji' | '/sitemap.xml' | '/product/$handle'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DjajiRoute: typeof DjajiRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProductHandleRoute: typeof ProductHandleRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/djaji': {
+      id: '/djaji'
+      path: '/djaji'
+      fullPath: '/djaji'
+      preLoaderRoute: typeof DjajiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DjajiRoute: DjajiRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProductHandleRoute: ProductHandleRoute,
 }
