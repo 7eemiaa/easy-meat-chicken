@@ -143,8 +143,7 @@ function RootComponent() {
                 اللحوم الحمراء · Viande
               </Link>
               <Link
-                to="/"
-                hash="djaji"
+                to="/djaji"
                 className="hidden sm:inline-flex text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 دجاجي · Volaille
