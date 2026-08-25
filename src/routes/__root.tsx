@@ -126,20 +126,32 @@ function RootComponent() {
       <div className="min-h-screen flex flex-col">
         <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-baseline gap-2">
               <span className="text-2xl font-serif font-bold tracking-tight text-foreground">
-                دجاجي
+                الگزار
+              </span>
+              <span className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Elgzar
               </span>
             </Link>
             <nav className="flex items-center gap-4">
               <Link
                 to="/"
+                hash="viande"
                 className="hidden sm:inline-flex text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                المتجر
+                اللحوم الحمراء · Viande
+              </Link>
+              <Link
+                to="/"
+                hash="djaji"
+                className="hidden sm:inline-flex text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                دجاجي · Volaille
               </Link>
               <CartDrawer />
             </nav>
+
           </div>
         </header>
         <main className="flex-1">
