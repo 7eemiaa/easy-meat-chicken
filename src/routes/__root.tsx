@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "دجاجي | توصيل اللحوم والدجاج الطازج" },
-      { name: "description", content: "لحوم ودجاج طازج من المزرعة يُوصَّل إلى باب منزلك. طلب سهل، توصيل سريع، جودة لا تُضاهى." },
-      { name: "author", content: "دجاجي" },
-      { property: "og:title", content: "دجاجي | توصيل اللحوم والدجاج الطازج" },
-      { property: "og:description", content: "لحوم ودجاج طازج من المزرعة يُوصَّل إلى باب منزلك." },
+      { title: "Elgzar | الگزار — بوشري اللحوم الحمراء" },
+      { name: "description", content: "Boucherie Elgzar : viande rouge halal (bœuf & agneau) livrée chez vous. لحوم حمراء حلال طازجة، بقري وخروفي، مع دجاجي للدواجن." },
+      { name: "author", content: "Elgzar" },
+      { property: "og:title", content: "Elgzar | الگزار — بوشري اللحوم الحمراء" },
+      { property: "og:description", content: "Viande rouge halal, bœuf & agneau. لحوم حمراء حلال طازجة تُوصَّل إليك." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@djaji" },
+      { name: "twitter:site", content: "@elgzar" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -96,6 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" },
     ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -125,20 +126,32 @@ function RootComponent() {
       <div className="min-h-screen flex flex-col">
         <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-baseline gap-2">
               <span className="text-2xl font-serif font-bold tracking-tight text-foreground">
-                دجاجي
+                الگزار
+              </span>
+              <span className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Elgzar
               </span>
             </Link>
             <nav className="flex items-center gap-4">
               <Link
                 to="/"
+                hash="viande"
                 className="hidden sm:inline-flex text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                المتجر
+                اللحوم الحمراء · Viande
+              </Link>
+              <Link
+                to="/"
+                hash="djaji"
+                className="hidden sm:inline-flex text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                دجاجي · Volaille
               </Link>
               <CartDrawer />
             </nav>
+
           </div>
         </header>
         <main className="flex-1">
@@ -147,10 +160,16 @@ function RootComponent() {
         <footer className="border-t border-border bg-secondary py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <span className="text-xl font-serif font-bold">دجاجي</span>
+              <div className="flex items-baseline gap-2">
+                <span className="text-xl font-serif font-bold">الگزار</span>
+                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  Elgzar · incl. دجاجي Djaji
+                </span>
+              </div>
               <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} دجاجي. لحوم ودجاج فاخر يُوصَّل إليك.
+                © {new Date().getFullYear()} Elgzar. لحوم حمراء حلال — بدون خنزير. Viande rouge halal.
               </p>
+
             </div>
           </div>
         </footer>
