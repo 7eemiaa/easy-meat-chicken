@@ -160,10 +160,16 @@ function RootComponent() {
         <footer className="border-t border-border bg-secondary py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <span className="text-xl font-serif font-bold">دجاجي</span>
+              <div className="flex items-baseline gap-2">
+                <span className="text-xl font-serif font-bold">الگزار</span>
+                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  Elgzar · incl. دجاجي Djaji
+                </span>
+              </div>
               <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} دجاجي. لحوم ودجاج فاخر يُوصَّل إليك.
+                © {new Date().getFullYear()} Elgzar. لحوم حمراء حلال — بدون خنزير. Viande rouge halal.
               </p>
+
             </div>
           </div>
         </footer>
