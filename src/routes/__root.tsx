@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "دجاجي | توصيل اللحوم والدجاج الطازج" },
-      { name: "description", content: "لحوم ودجاج طازج من المزرعة يُوصَّل إلى باب منزلك. طلب سهل، توصيل سريع، جودة لا تُضاهى." },
-      { name: "author", content: "دجاجي" },
-      { property: "og:title", content: "دجاجي | توصيل اللحوم والدجاج الطازج" },
-      { property: "og:description", content: "لحوم ودجاج طازج من المزرعة يُوصَّل إلى باب منزلك." },
+      { title: "Elgzar | الگزار — بوشري اللحوم الحمراء" },
+      { name: "description", content: "Boucherie Elgzar : viande rouge halal (bœuf & agneau) livrée chez vous. لحوم حمراء حلال طازجة، بقري وخروفي، مع دجاجي للدواجن." },
+      { name: "author", content: "Elgzar" },
+      { property: "og:title", content: "Elgzar | الگزار — بوشري اللحوم الحمراء" },
+      { property: "og:description", content: "Viande rouge halal, bœuf & agneau. لحوم حمراء حلال طازجة تُوصَّل إليك." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@djaji" },
+      { name: "twitter:site", content: "@elgzar" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -96,6 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" },
     ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
