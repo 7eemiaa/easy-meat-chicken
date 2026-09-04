@@ -146,7 +146,7 @@ function Index() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {redMeat.map((product) => (
               <ProductCard key={product.node.id} product={product} />
             ))}
@@ -169,7 +169,7 @@ function Index() {
                 علامتنا الخاصة بالدواجن الطازجة، داخل الگزار.
               </p>
             </div>
-            <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
               {poultry.map((product) => (
                 <ProductCard key={product.node.id} product={product} />
               ))}
@@ -186,7 +186,7 @@ function Index() {
               وجبات مطهوة — Cuisine
             </h2>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {cookedMeals.map((product) => (
               <ProductCard key={product.node.id} product={product} />
             ))}
