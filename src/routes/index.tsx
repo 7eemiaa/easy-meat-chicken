@@ -52,7 +52,7 @@ function Index() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
           <div className="max-w-2xl">
             <span className="inline-flex items-center rounded-full bg-primary/15 px-3 py-1 text-sm font-medium text-foreground mb-6">
-              100% حلال · Sans porc
+              100% حلال
             </span>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[1.1] text-foreground">
               الگزار — بوشري اللحوم الحمراء
