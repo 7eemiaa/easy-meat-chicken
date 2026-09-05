@@ -96,7 +96,7 @@ function Index() {
               <div>
                 <h3 className="font-semibold">بقري وخروفي حلال · Halal</h3>
                 <p className="text-sm text-muted-foreground mt-1">
-                  لحوم حمراء فقط، بدون خنزير أبداً. Jamais de porc.
+                  لحوم حمراء فقط.
                 </p>
               </div>
             </div>
